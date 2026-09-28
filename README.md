@@ -8,26 +8,26 @@ Il a pour objectif de développer un mini logiciel de gestion pédagogique et ad
 
 ---
 
-## 🎯 Objectif du projet
+## Objectif du projet
 
 Le logiciel centralise la gestion des enseignements à la Faculté des Sciences et Techniques :
 
-- 🏛️ **Hiérarchie des enseignements** : Diplôme ➔ Semestre ➔ Unité d’Enseignement (UE)  
-- 👨‍🏫 **Suivi des enseignants** : statuts, charges horaires, interventions  
-- 💰 **Calcul des coûts** : heures ETD, coûts horaires des diplômes  
-- 📊 **Statistiques par département** : taux d’encadrement, charge horaire totale  
-- 💾 **Persistance des données** : sauvegarde et chargement depuis des fichiers
+- **Hiérarchie des enseignements** : Diplôme ➔ Semestre ➔ Unité d’Enseignement (UE)  
+- **Suivi des enseignants** : statuts, charges horaires, interventions  
+- **Calcul des coûts** : heures ETD, coûts horaires des diplômes  
+- **Statistiques par département** : taux d’encadrement, charge horaire totale  
+- **Persistance des données** : sauvegarde et chargement depuis des fichiers
 
 
 ---
 
-## 🏗️ Architecture du projet
+## Architecture du projet
 
-### 📂 Organisation des classes (UML & POO)
+### Organisation des classes (UML & POO)
 
 Le projet applique strictement les principes de la POO. Chaque classe a un rôle précis.
 
-#### 👨‍🏫 Hiérarchie des Enseignants
+#### Hiérarchie des Enseignants
 
 - **Classe `Enseignant`**  
   - Attributs : ID unique, nom, email généré automatiquement  
@@ -43,10 +43,10 @@ Le projet applique strictement les principes de la POO. Chaque classe a un rôle
 
 - **Méthode clé** : `virtual getNbH_ETD()` → calcul polymorphique selon le type d’enseignant  
 
-💡 **Concepts appliqués** : polymorphisme, encapsulation, héritage
+ **Concepts appliqués** : polymorphisme, encapsulation, héritage
 
 
-#### 🏛️ Classe `Departement`
+#### Classe `Departement`
 
 - Attributs : nom, liste d’enseignants, liste d’UE, responsable (pointeur vers un enseignant)  
 - Rôle : centraliser la gestion d’un département, calculer le taux d’encadrement et la charge totale des UE  
@@ -54,7 +54,7 @@ Le projet applique strictement les principes de la POO. Chaque classe a un rôle
 
 
 
-#### 📜 Classes `Diplome` & `Semestre`
+####  Classes `Diplome` & `Semestre`
 
 - `Diplome` contient une ou plusieurs instances de `Semestre` (**composition**)  
 - Rôle : organiser les UE en semestres, calculer le coût total d’un diplôme  
@@ -62,30 +62,30 @@ Le projet applique strictement les principes de la POO. Chaque classe a un rôle
 
 
 
-#### 📚 Classe `UE` (Unité d’Enseignement)
+####  Classe `UE` (Unité d’Enseignement)
 
 - Attributs : volumes horaires CM/TD/TP, nombre de groupes  
 - Rôle : gérer les enseignements, calculer les **heures ETD** selon coefficients :  
   - CM = 1.5, TD = 1, TP = 2/3  
 - Capacité à appartenir à **plusieurs semestres/diplômes** et répartir le coût proportionnellement  
 
-💡 **Concept clé** : encapsulation pour garantir l’exactitude des calculs
+ **Concept clé** : encapsulation pour garantir l’exactitude des calculs
 
 ---
 
-## ✨ Fonctionnalités Techniques Avancées
+## Fonctionnalités Techniques Avancées
 
-### 🆔 Gestion Intelligente des Identifiants
+### Gestion Intelligente des Identifiants
 
 - Les IDs (ex: ENS001, DEP012) sont générés automatiquement  
 - Au démarrage, le programme analyse les fichiers existants pour reprendre le compteur au bon numéro, évitant les doublons après redémarrage
 
-### 💾 Système de Persistance (Fichiers)
+### Système de Persistance (Fichiers)
 
 - **Sérialisation** : objets en mémoire convertis en format texte structuré dans le dossier `/data`  
 - **Désérialisation** : recrée les liens (pointeurs) entre les objets lors du chargement
 
-### 🎨 Interface Console (UX)
+### Interface Console (UX)
 
 - Utilisation du module `couleur.cpp` pour améliorer la lisibilité  
 - **Codes ANSI** : Cyan pour les IDs, Jaune pour les libellés, Rouge pour les erreurs système  
@@ -93,7 +93,7 @@ Le projet applique strictement les principes de la POO. Chaque classe a un rôle
 
 ---
 
-## 📂 Arborescence du projet
+##  Arborescence du projet
 
 Projet_Analyse_gestion_UML_POO/ <br>
 ├── data/ # fichiers .txt pour persistance <br>
@@ -135,7 +135,7 @@ Projet_Analyse_gestion_UML_POO/ <br>
 
 └── README.md 
 
-## 🛠️ Technologies & Concepts appliqués
+## Technologies & Concepts appliqués
 
 - **Langage** : C++  
 - **STL** : `std::list`, `std::stringstream`  
